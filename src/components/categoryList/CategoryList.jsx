@@ -4,12 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch(
-    "https://blogapp-alr1mpmo2-sufi0900.vercel.app/api/categories",
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch("http://localhost:3000/api/categories", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed");
@@ -24,7 +21,7 @@ const CategoryList = async () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {data.map((item) => (
+        {data?.map((item) => (
           <Link
             href="/blog?cat=style"
             className={`${styles.category} ${styles[item.slug]}`}

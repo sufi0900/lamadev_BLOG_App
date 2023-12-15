@@ -1,14 +1,12 @@
 import React from "react";
 import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
-import Image from "next/image";
+// import Image from "next/image";
 import Card from "../card/Card";
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `https://blogapp-alr1mpmo2-sufi0900.vercel.app/api/posts?page=${page}&cat=${
-      cat || ""
-    }`,
+    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }

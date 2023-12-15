@@ -2,7 +2,7 @@
 import { signIn, useSession } from "next-auth/react";
 import styles from "./loginPage.module.css";
 import { useRouter } from "next/navigation";
-
+import Page from "@/app/page";
 const LoginPage = () => {
   const { status } = useSession();
 
@@ -13,9 +13,9 @@ const LoginPage = () => {
   }
 
   if (status === "authenticated") {
-    router.push("/")
+    router.push("/");
   }
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -25,6 +25,7 @@ const LoginPage = () => {
         <div className={styles.socialButton}>Sign in with Github</div>
         <div className={styles.socialButton}>Sign in with Facebook</div>
       </div>
+      <Page />
     </div>
   );
 };

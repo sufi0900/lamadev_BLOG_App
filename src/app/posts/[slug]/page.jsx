@@ -4,12 +4,9 @@ import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
-  const res = await fetch(
-    `https://blogapp-alr1mpmo22-sufi0900.vercel.app/api/posts/${slug}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed");
