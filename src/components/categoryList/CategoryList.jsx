@@ -4,12 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch(
-    "https://blogapp-42j7j1etz-sufi0900.vercel.app/api/categories",
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch("z/api/categories", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed");
