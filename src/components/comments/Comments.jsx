@@ -24,7 +24,7 @@ const Comments = ({ postSlug }) => {
   const { status } = useSession();
 
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `https://blogapp-alr1mpmo2-sufi0900.vercel.app/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
